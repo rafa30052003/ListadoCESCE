@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rioma.listadocesce.FacturaController">
+   <top>
+      <HBox prefHeight="53.0" prefWidth="981.0" style="-fx-background-color: #094293;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="29.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@../../../img/Logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </HBox.margin></ImageView>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane prefHeight="670.0" prefWidth="1181.0" style="-fx-background-color: #094293;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tableFactura" layoutX="25.0" layoutY="22.0" prefHeight="646.0" prefWidth="1132.0">
+                    <columns>
+                      <TableColumn fx:id="colTipoDoc" prefWidth="77.0" text="TipoDoc" />
+                      <TableColumn fx:id="colNumFac" minWidth="0.0" prefWidth="69.0" text="numFac" />
+                        <TableColumn fx:id="colClienteId" prefWidth="79.0" text="clienteID" />
+                        <TableColumn fx:id="colNombreCliente" prefWidth="52.0" text="nombre" />
+                        <TableColumn fx:id="colMetodoPago" prefWidth="83.0" text="metodo Pago" />
+                        <TableColumn fx:id="colFechaFactura" prefWidth="82.0" text="fecha Factura" />
+                        <TableColumn fx:id="colFechaVencimiento" minWidth="7.0" prefWidth="117.0" text="fecha Vencimiento" />
+                        <TableColumn fx:id="colImporteVencimiento" minWidth="0.0" prefWidth="132.0" text="importe Vencimiento" />
+                        <TableColumn fx:id="colTotalFactura" prefWidth="84.0" text="total factura" />
+                        <TableColumn fx:id="colNif" minWidth="0.0" prefWidth="90.0" text="NIF" />
+                        <TableColumn fx:id="colCycPoliza" minWidth="0.0" prefWidth="69.0" text="cycPoliza" />
+                        <TableColumn fx:id="colNombrePais" prefWidth="86.0" text="nombre Pais" />
+                        <TableColumn fx:id="colCreditoAseg" prefWidth="111.0" text="credito Asegurado" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="41.0" prefWidth="1181.0" style="-fx-border-color: #094293; -fx-border-width: 0px 0px 1px 0px;" BorderPane.alignment="CENTER">
+               <children>
+                  <DatePicker fx:id="datepickerInicio" layoutX="38.0" layoutY="8.0" prefHeight="27.0" prefWidth="218.0" promptText="Fecha Inicial" style="-fx-border-color: #094293;" />
+                  <DatePicker fx:id="datepickerFin" layoutX="343.0" layoutY="8.0" prefHeight="27.0" prefWidth="248.0" promptText="Fecha Final" style="-fx-border-color: #094293;" />
+                  <Button layoutX="780.0" layoutY="8.0" mnemonicParsing="false" onAction="#buscarFacturas" prefHeight="25.0" prefWidth="109.0" style="-fx-border-color: #094293;" text="BUSCAR" />
+                  <Button fx:id="exportButton" layoutX="960.0" layoutY="8.0" mnemonicParsing="false" onAction="#exportToExcel" prefHeight="25.0" prefWidth="109.0" style="-fx-border-color: #094293;" text="EXPORTAR" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>
